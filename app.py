@@ -9,5 +9,5 @@ print('success connection')
 
 
 
-a = 1 
-a = 2
+msg = 'initial log'
+msg = 'header log'
