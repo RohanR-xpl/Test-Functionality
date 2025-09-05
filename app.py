@@ -1,7 +1,8 @@
 msg = 'initial log'
 msg = 'header log'
 msg = 'Secret Key..'
-msg = 'Event Check'
+msg = 'Event Checks '
+msg = 'PR Checks'
 
 
 print('Sent to Listen')
