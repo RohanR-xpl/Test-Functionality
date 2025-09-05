@@ -1,3 +1,9 @@
+msg = 'initial log'
+msg = 'header log'
+msg = 'Secret Key..'
+msg = 'Event Check'
+
+
 print('Sent to Listen')
 print('Sent to Post')
 print('Changed IP')
@@ -7,8 +13,3 @@ print('Added Return')
 print('Status Return')
 print('success connection')
 
-
-
-msg = 'initial log'
-msg = 'header log'
-msg = 'Secret Key..'
