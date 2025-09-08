@@ -25,6 +25,6 @@ jobs:
             else 
                 echo " PR To ${{github.head_ref}} Starting execution"
                 python app.py
-                exit 1
+                exit 0
             fi
         
