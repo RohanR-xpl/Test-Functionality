@@ -8,14 +8,17 @@ jobs:
   check-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        - name: Checkout code
+          uses: actions/checkout@v4
 
-      - name: Print PR info
-        run: |
-            echo "Repository: ${{ github.repository }}"
-            echo "PR Number: ${{ github.event.pull_request.number }}"
-            echo "Base branch: ${{ github.base_ref }}"
-            echo "Head branch: ${{ github.head_ref }}"
+        - name: Print PR info
+          run: |
+                echo "Repository: ${{ github.repository }}"
+                echo "PR Number: ${{ github.event.pull_request.number }}"
+                echo "Base branch: ${{ github.base_ref }}"
+                echo "Head branch: ${{ github.head_ref }}"
+        - name: Run Python
+          if: '${{ github.base_ref }} == "main"'
+          run: |
             python app.py 
         
