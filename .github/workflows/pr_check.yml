@@ -18,7 +18,13 @@ jobs:
                 echo "Base branch: ${{ github.base_ref }}"
                 echo "Head branch: ${{ github.head_ref }}"
         - name: Run Python
-          if: '${{ github.base_ref }} == "main"'
           run: |
-            python app.py 
+            if [ "${{ github.base_ref }}" != "main" ]; then
+                echo " PR To ${{github.head_ref}} Ignoring execution"
+                exit 0
+            else 
+                echo " PR To ${{github.head_ref}} Starting execution"
+                python app.py
+                exit 1
+            fi
         
