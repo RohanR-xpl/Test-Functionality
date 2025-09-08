@@ -17,6 +17,7 @@ jobs:
                 echo "PR Number: ${{ github.event.pull_request.number }}"
                 echo "Base branch: ${{ github.base_ref }}"
                 echo "Head branch: ${{ github.head_ref }}"
+                
         - name: Run Python
           run: |
             if [ "${{ github.base_ref }}" != "main" ]; then

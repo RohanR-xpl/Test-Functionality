@@ -1,8 +1,6 @@
 import os
 
-event_path = os.getenv('GITHUB_EVENT_PATH')
-
-print(event_path)
+print(os.getenv('GITHUB_CONFIG'))
 
 msg = 'initial log'
 msg = 'header log'
