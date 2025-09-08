@@ -2,9 +2,7 @@ msg = 'initial log'
 msg = 'header log'
 msg = 'Secret Key..'
 msg = 'Event Check'
-
-
-
+msg = 'YML check'
 
 print('Sent to Listen')
 print('Sent to Post')
