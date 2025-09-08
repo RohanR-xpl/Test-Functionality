@@ -8,3 +8,4 @@ if event_path and os.path.exists(event_path):
         event = json.load(f)
     os.environ['GITHUB_CONFIG'] = event or {}
     
+    
