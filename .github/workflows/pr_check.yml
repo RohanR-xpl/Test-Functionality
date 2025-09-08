@@ -18,7 +18,7 @@ jobs:
                 echo "Base branch: ${{ github.base_ref }}"
                 echo "Head branch: ${{ github.head_ref }}"
         - name: Run Python
-          if: '${{ github.base_ref }} == "main"'
+          if: github.base_ref == 'main'
           run: |
             python app.py 
         
