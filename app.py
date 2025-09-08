@@ -1,6 +1,7 @@
 import os
 
 print(os.getenv('GITHUB_CONFIG'))
+print(os.getenv('ENV_WORK'))
 
 msg = 'initial log'
 msg = 'header log'
