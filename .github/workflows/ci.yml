@@ -1,13 +1,24 @@
-name: CI Test
+name: Input Id
 
-on: [push]
-
+on:
+  workflow_dispatch:
+    inputs:
+      work_id:
+        description: 'Define Work Id'
+        required: true      
+        default: None
 jobs:
-  test:
+  use-inputs:
     runs-on: ubuntu-latest
+
+    env:
+      ENV_WORK: ${{ github.event.inputs.work_id }}
+
     steps:
-      - uses: actions/checkout@v3
-      - run: echo "Hello from GitHub Actions"
+      - name: Checking Env Values
+        run: |
+          echo "Environment: $ENV_WORK"
 
-
-
+      - name: Env log
+        run: |
+          echo "You could now use $ENV_WORK to trigger environment-specific tasks."
