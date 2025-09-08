@@ -1,3 +1,9 @@
+import os
+
+event_path = os.getenv('GITHUB_EVENT_PATH')
+
+print(event_path)
+
 msg = 'initial log'
 msg = 'header log'
 msg = 'Secret Key..'
