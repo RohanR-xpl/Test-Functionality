@@ -1,1 +1,1 @@
-SQLALCHEMY_DATABASE_URI = 'postgresql://openpg:openpgpwd@localhost/zhap_parser_test'
+SQLALCHEMY_DATABASE_URI = "postgresql://github:github@localhost:5432/test_db"
