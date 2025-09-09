@@ -48,5 +48,6 @@ jobs:
               exit 0
           else 
               echo " PR To ${{github.head_ref}} Starting execution"
+              pip install flask psycopg2 flask_sqlalchemy 
               python app.py
           fi
