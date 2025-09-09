@@ -1,11 +1,22 @@
 import os
 import json
+import logging
 
-GITHUB_CONFIG = json.loads(os.getenv('GITHUB_CONFIG') or "{}")
+logging.basicConfig(level=logging.DEBUG)
 
+logging.info('------ Github Action Execution Started -------')
 
-print(GITHUB_CONFIG)
-print('Sent to Listen')
-print('Used Ngrok')
-print('success connection')
+GITHUB_EVENT_PATH = os.getenv('GITHUB_EVENT_PATH')
+
+event = {}
+
+if GITHUB_EVENT_PATH and os.path.exists(GITHUB_EVENT_PATH):
+    with open(GITHUB_EVENT_PATH, 'r') as f:
+        event = json.load(f)
+        event = event if event else {}
+        
+    
+        
+        
+logging.info('------ Github Action Execution Ended -------')
 
