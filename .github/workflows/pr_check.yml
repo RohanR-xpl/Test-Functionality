@@ -25,7 +25,6 @@ jobs:
                 exit 0
             else 
                 echo " PR To ${{github.head_ref}} Starting execution"
-                python set_config.py
                 python app.py
                 exit 0
             fi
