@@ -30,7 +30,8 @@ def createApp():
     logging.info(SQLALCHEMY_DATABASE_URI)
     app.config.from_object('set_config')
     db.init_app(app)
-    db.create_all()
+    with app.app_context():
+        db.create_all()
     return app
 
 app = createApp()
