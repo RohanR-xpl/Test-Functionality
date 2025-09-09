@@ -3,15 +3,15 @@ import json
 import logging
 import sys
 from flask import Flask, Blueprint
-from flask_sqlalchemy import SQLAlchemy
+from extensions import db
 from set_config import SQLALCHEMY_DATABASE_URI
+from models import base
 
 logging.basicConfig(level=logging.DEBUG)
 
 logging.info('------ Github Action Execution Started -------')
 
 GITHUB_EVENT_PATH = os.getenv('GITHUB_EVENT_PATH')
-
 
 event = {}
 
@@ -27,14 +27,24 @@ if not event:
 
 def createApp():
     app = Flask(__name__)
-    db = SQLAlchemy()
     logging.info(SQLALCHEMY_DATABASE_URI)
     app.config.from_object('set_config')
     db.init_app(app)
-    
-    logging.info(app.config)
+    db.create_all()
     return app
 
-createApp()
+app = createApp()
+
+
+def createModels():
+    value = {
+        'success':False
+    }
+    model = base.TestSuccess(**value)
+    db.session.add(model)
+    db.session.commit()
+    logging.info('----Model Data Success ------')
+    
+createModels()
 
 logging.info('------ Github Action Execution Ended -------')
