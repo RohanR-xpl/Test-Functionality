@@ -29,8 +29,9 @@ def createApp():
     app = Flask(__name__)
     db = SQLAlchemy()
     logging.info(SQLALCHEMY_DATABASE_URI)
-    db.init_app(app)
     app.config.from_object('set_config')
+    db.init_app(app)
+    
     logging.info(app.config)
     return app
 
