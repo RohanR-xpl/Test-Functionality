@@ -4,7 +4,7 @@ import logging
 import sys
 from flask import Flask, Blueprint
 from flask_sqlalchemy import SQLAlchemy
-from .set_config import SQLALCHEMY_DATABASE_URI
+from set_config import SQLALCHEMY_DATABASE_URI
 
 logging.basicConfig(level=logging.DEBUG)
 
