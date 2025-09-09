@@ -29,7 +29,7 @@ def createApp():
     app = Flask(__name__)
     db = SQLAlchemy()
     db.init_app(app)
-    app.config.from_object('config')
+    app.config.from_object('set_config')
     logging.info(app.config)
     return app
 
