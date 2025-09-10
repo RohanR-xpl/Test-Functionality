@@ -9,7 +9,6 @@ def create_app():
 
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv(
         "SQLALCHEMY_DATABASE_URI",
-        "postgresql://openpg:openpgpwd@localhost:5432/zhap_parser_test" 
     )
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
