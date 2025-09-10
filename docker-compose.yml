@@ -9,7 +9,9 @@ services:
       POSTGRES_PASSWORD: openpgpwd
       POSTGRES_DB: zhap_parser_test
     ports:
-      - "5432:5432"
+      - "5433:5432"
+    networks:
+      - test-network-connection
     volumes:
       - pgdata:/var/lib/postgresql/data
 
@@ -22,6 +24,8 @@ services:
       SQLALCHEMY_DATABASE_URI: postgresql://openpg:openpgpwd@db:5432/zhap_parser_test
     ports:
       - "5000:5000"
+    networks:
+      - test-network-connection
     volumes:
       - .:/app
 

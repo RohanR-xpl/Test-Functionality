@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11
 WORKDIR /app
 RUN pip install flask flask_sqlalchemy psycopg2
 COPY . .
