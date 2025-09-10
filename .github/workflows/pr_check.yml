@@ -4,24 +4,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+
 jobs:
   check-pr:
     runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: postgres:15
-        env:
-          POSTGRES_USER: github
-          POSTGRES_PASSWORD: github
-          POSTGRES_DB: test_db
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd="pg_isready -U github -d test_db"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
 
     steps:
       - name: Checkout code
@@ -48,5 +34,5 @@ jobs:
           else 
               echo " PR To ${{github.head_ref}} Starting execution"
               
-              python app.py
+              python action.py
           fi
